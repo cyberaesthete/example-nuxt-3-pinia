@@ -1,8 +1,12 @@
 import type { IncomingMessage, ServerResponse } from "http";
+import { useCounter } from "~/stores/counter"
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
+  const counter = useCounter()
+
   const data = {
-    msg: 'hello 2'
+    msg: 'hello 2',
+    counter: counter.n
   }
 
 

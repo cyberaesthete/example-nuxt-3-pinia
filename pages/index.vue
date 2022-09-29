@@ -1,5 +1,6 @@
 <template>
   <div>
+    {{ hello }}
     <div style="margin: 1rem 0;">
       <PiniaLogo />
     </div>
@@ -68,6 +69,8 @@ const counter = useCounter()
 // if (process.server) {
 //   counter.n = 20
 // }
+
+const { data: hello } = await useFetch("/api/hello")
 </script>
 
 <style scoped>
